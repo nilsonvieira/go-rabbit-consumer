@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  rabbit-consumer:
+    container_name: consumer
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      AMQP_SERVER_URL: 'amqp://lab:lab@host.docker.internal:5672/'
+    restart: always
